@@ -1,0 +1,41 @@
+@keyframes pop-in {
+    from {
+        visibility: hidden;
+        height: 0;
+    }
+
+    1% {
+        visibility: visible;
+        height: 0;
+    }
+
+    to {
+        height: fit-content;
+        visibility: visible;
+    }
+}
+
+@keyframes pop-out {
+    from {
+        height: fit-content;
+        visibility: visible;
+    }
+
+    99% {
+        height: fit-content;
+        visibility: hidden;
+    }
+    
+    to {
+        height: 0;
+        visibility: hidden;
+    }
+}
+
+.pop-in {
+    animation: pop-in 0.2s forwards;
+}
+
+.pop-out {
+    animation: pop-out 0.2s forwards;
+}

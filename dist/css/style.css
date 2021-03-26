@@ -1,3 +1,82 @@
+@-webkit-keyframes pop-in {
+  from {
+    visibility: hidden;
+    height: 0;
+  }
+  1% {
+    visibility: visible;
+    height: 0;
+  }
+  to {
+    height: -webkit-fit-content;
+    height: fit-content;
+    visibility: visible;
+  }
+}
+
+@keyframes pop-in {
+  from {
+    visibility: hidden;
+    height: 0;
+  }
+  1% {
+    visibility: visible;
+    height: 0;
+  }
+  to {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes pop-out {
+  from {
+    height: -webkit-fit-content;
+    height: fit-content;
+    visibility: visible;
+  }
+  99% {
+    height: -webkit-fit-content;
+    height: fit-content;
+    visibility: hidden;
+  }
+  to {
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes pop-out {
+  from {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    visibility: visible;
+  }
+  99% {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    visibility: hidden;
+  }
+  to {
+    height: 0;
+    visibility: hidden;
+  }
+}
+
+.pop-in {
+  -webkit-animation: pop-in 0.2s forwards;
+          animation: pop-in 0.2s forwards;
+}
+
+.pop-out {
+  -webkit-animation: pop-out 0.2s forwards;
+          animation: pop-out 0.2s forwards;
+}
+
 html {
   font-size: 100%;
   -webkit-box-sizing: border-box;
@@ -20,6 +99,12 @@ body {
 a {
   text-decoration: none;
   font-size: 16px;
+  color: #c8c8cb;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+a:hover {
   color: white;
 }
 
@@ -92,6 +177,7 @@ button {
 }
 
 .header-link {
+  position: relative;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -106,8 +192,46 @@ button {
   margin-right: 1rem;
 }
 
+.header-link .link span {
+  margin-right: 5px;
+}
+
+.header-link .link:hover span {
+  -webkit-text-decoration: underline solid white 2px;
+          text-decoration: underline solid white 2px;
+}
+
+.header-link .link-content {
+  display: inline;
+}
+
+.header-link .box {
+  margin-top: 20px;
+  position: absolute;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.274);
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.274);
+  padding: 25px 35px;
+}
+
+.header-link .box a {
+  display: block;
+  color: black;
+  font-weight: 500;
+  width: 150px;
+}
+
+.header-link .box a:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.header-link .box a:hover {
+  font-weight: 700;
+}
+
 .header-button .login {
-  margin-right: 1rem;
+  margin-right: 1.25rem;
   font-weight: 700;
 }
 
