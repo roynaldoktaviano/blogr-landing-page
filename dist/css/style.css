@@ -213,6 +213,9 @@ button {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.274);
           box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.274);
   padding: 25px 35px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .header-link .box a {
@@ -228,6 +231,12 @@ button {
 
 .header-link .box a:hover {
   font-weight: 700;
+}
+
+.header-link .box.hide {
+  height: 0;
+  padding: 0;
+  visibility: hidden;
 }
 
 .header-button .login {
