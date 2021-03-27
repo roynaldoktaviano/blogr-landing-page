@@ -1,6 +1,7 @@
 const headerLink = document.querySelectorAll('.link-content');
 const hamburger = document.querySelector('.hamburger')
 const hamburgerLink = document.querySelectorAll('.hamburger-link');
+const hamburgerMenu = document.querySelector('.hamburger-menu')
 
 headerLink.forEach(function(elem){
     const boxFile = elem.lastElementChild;
@@ -18,8 +19,10 @@ headerLink.forEach(function(elem){
 hamburger.addEventListener("click", function(){
     if(hamburger.classList.contains('open')){
         hamburger.classList.remove('open')
+        hamburgerMenu.classList.remove('open');
     } else {
         hamburger.classList.add('open');
+        hamburgerMenu.classList.add('open');
     }
 })
 
