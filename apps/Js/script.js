@@ -24,16 +24,17 @@ hamburger.addEventListener("click", function(){
 })
 
 hamburgerLink.forEach(function(elem){
-    const arrow = elem.childNodes;
+    const arrow = elem.children;
     const text = elem.firstElementChild;
     elem.addEventListener("click", function(){
         if(elem.classList.contains('open')){
             elem.classList.remove('open');
             text.style.color = "#1f3f5b"; 
+            arrow[1].style.transform = "rotate(0deg)";
         } else {
             elem.classList.add('open');
             text.style.color = "gray"
-            arrow[2].style.transform = "rotate(180deg)";
+            arrow[1].style.transform = "rotate(180deg)";
         }
     })
 })

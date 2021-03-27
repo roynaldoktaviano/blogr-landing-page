@@ -168,7 +168,7 @@
 
     .hamburger-link {
         margin-bottom: 30px;
-
+        height: fit-content;
         a{
             font-size: 18px;
             font-family: 'Overpass', sans-serif;
@@ -183,10 +183,11 @@
 
         .menu {
             display: block;
+            padding: 0 0;
             height: 0;
             transition: 0.2s ease-in-out;
             width: 80%;
-            margin: 20px auto;
+            margin: 0 auto;
             opacity: 0;
             visibility: hidden;
 
@@ -206,6 +207,7 @@
                 background-color: rgba(233, 233, 233, 0.596);
                 height: fit-content;
                 transition: 0.2s ease-in-out;
+                margin: 20px auto;
                 
     
                 a{
@@ -219,7 +221,7 @@
                 }
 
                 img {
-                    transform: rotate(180deg);
+                    transform: r;
                 }
             }
         }

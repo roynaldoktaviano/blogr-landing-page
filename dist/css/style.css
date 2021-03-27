@@ -323,6 +323,9 @@ button {
 
 .hamburger-menu .hamburger-link {
   margin-bottom: 30px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 .hamburger-menu .hamburger-link a {
@@ -340,11 +343,12 @@ button {
 
 .hamburger-menu .hamburger-link .menu {
   display: block;
+  padding: 0 0;
   height: 0;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
   width: 80%;
-  margin: 20px auto;
+  margin: 0 auto;
   opacity: 0;
   visibility: hidden;
 }
@@ -366,6 +370,7 @@ button {
   height: fit-content;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
+  margin: 20px auto;
 }
 
 .hamburger-menu .hamburger-link.open .menu a {
@@ -379,8 +384,8 @@ button {
 }
 
 .hamburger-menu .hamburger-link.open .menu img {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  -webkit-transform: r;
+          transform: r;
 }
 
 .hamburger-menu hr {
