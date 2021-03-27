@@ -1,15 +1,14 @@
 @-webkit-keyframes pop-in {
   from {
     visibility: hidden;
-    height: 0;
+    opacity: 0;
   }
   1% {
+    opacity: 0;
     visibility: visible;
-    height: 0;
   }
   to {
-    height: -webkit-fit-content;
-    height: fit-content;
+    opacity: 1;
     visibility: visible;
   }
 }
@@ -17,64 +16,56 @@
 @keyframes pop-in {
   from {
     visibility: hidden;
-    height: 0;
+    opacity: 0;
   }
   1% {
+    opacity: 0;
     visibility: visible;
-    height: 0;
   }
   to {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    opacity: 1;
     visibility: visible;
   }
 }
 
 @-webkit-keyframes pop-out {
   from {
-    height: -webkit-fit-content;
-    height: fit-content;
+    opacity: 1;
     visibility: visible;
   }
   99% {
-    height: -webkit-fit-content;
-    height: fit-content;
-    visibility: hidden;
+    opacity: 0;
+    visibility: visible;
   }
   to {
-    height: 0;
+    opacity: 0;
     visibility: hidden;
   }
 }
 
 @keyframes pop-out {
   from {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    opacity: 1;
     visibility: visible;
   }
   99% {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-    visibility: hidden;
+    opacity: 0;
+    visibility: visible;
   }
   to {
-    height: 0;
+    opacity: 0;
     visibility: hidden;
   }
 }
 
 .pop-in {
-  -webkit-animation: pop-in 0.2s forwards;
-          animation: pop-in 0.2s forwards;
+  -webkit-animation: pop-in 0.3s forwards ease-in-out;
+          animation: pop-in 0.3s forwards ease-in-out;
 }
 
 .pop-out {
-  -webkit-animation: pop-out 0.2s forwards;
-          animation: pop-out 0.2s forwards;
+  -webkit-animation: pop-out 0.3s forwards ease-in-out;
+          animation: pop-out 0.3s forwards ease-in-out;
 }
 
 html {
@@ -99,7 +90,7 @@ body {
 a {
   text-decoration: none;
   font-size: 16px;
-  color: #c8c8cb;
+  color: #e2e2e2;
   -webkit-transition: 0.2s ease-in-out;
   transition: 0.2s ease-in-out;
 }
@@ -177,7 +168,6 @@ button {
 }
 
 .header-link {
-  position: relative;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -196,18 +186,30 @@ button {
   margin-right: 5px;
 }
 
+.header-link .link img {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
 .header-link .link:hover span {
   -webkit-text-decoration: underline solid white 2px;
           text-decoration: underline solid white 2px;
 }
 
+.header-link .link:hover img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .header-link .link-content {
   display: inline;
+  position: relative;
 }
 
 .header-link .box {
   margin-top: 20px;
   position: absolute;
+  left: -15px;
   background-color: white;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.274);
@@ -216,6 +218,8 @@ button {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .header-link .box a {
@@ -231,12 +235,6 @@ button {
 
 .header-link .box a:hover {
   font-weight: 700;
-}
-
-.header-link .box.hide {
-  height: 0;
-  padding: 0;
-  visibility: hidden;
 }
 
 .header-button .login {
@@ -259,13 +257,157 @@ button {
 
 .header .hamburger span {
   display: block;
+  opacity: 1;
+  position: relative;
   background: white;
   height: 3px;
   border-radius: 70px;
   width: 35px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .header .hamburger span:not(:last-child) {
   margin-bottom: 5px;
+}
+
+.header .hamburger span:first-child {
+  top: 0;
+  opacity: 1;
+}
+
+.header .hamburger span:last-child {
+  bottom: 0;
+  opacity: 1;
+}
+
+.header .hamburger span:nth-child(2) {
+  position: absolute;
+}
+
+.header .open span:first-child {
+  top: -10px;
+  opacity: 0;
+}
+
+.header .open span:last-child {
+  bottom: -10px;
+  opacity: 0;
+}
+
+.header .open span:nth-child(2) {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header .open span:nth-child(3) {
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.hamburger-menu {
+  font-family: 'Overpass', sans-serif;
+  padding-top: 2.25rem;
+  padding-bottom: 2.25rem;
+  margin: 0 1.25rem;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.356);
+          box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.356);
+  text-align: center;
+}
+
+.hamburger-menu .hamburger-link {
+  margin-bottom: 30px;
+}
+
+.hamburger-menu .hamburger-link a {
+  font-size: 18px;
+  font-family: 'Overpass', sans-serif;
+  color: #1f3f5b;
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.hamburger-menu .hamburger-link img {
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.hamburger-menu .hamburger-link .menu {
+  display: block;
+  height: 0;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  width: 80%;
+  margin: 20px auto;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hamburger-menu .hamburger-link .menu a {
+  display: block;
+  color: #4b5862;
+}
+
+.hamburger-menu .hamburger-link.open .menu {
+  display: block;
+  visibility: visible;
+  padding: 40px 0;
+  opacity: 1;
+  border-radius: 5px;
+  background-color: rgba(233, 233, 233, 0.596);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+
+.hamburger-menu .hamburger-link.open .menu a {
+  font-size: 18px;
+  display: block;
+  color: #4b5862;
+}
+
+.hamburger-menu .hamburger-link.open .menu a:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.hamburger-menu .hamburger-link.open .menu img {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.hamburger-menu hr {
+  width: 80%;
+  border-color: rgba(214, 214, 214, 0.37);
+}
+
+.hamburger-menu .hamburger-login {
+  margin-top: 30px;
+}
+
+.hamburger-menu .hamburger-login a {
+  display: block;
+  font-size: 18px;
+  font-family: 'Overpass', sans-serif;
+  color: #1f3f5b;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.hamburger-menu .hamburger-login button {
+  cursor: pointer;
+  font-weight: 700;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  color: white;
+  background: -webkit-gradient(linear, left top, right top, from(#ff8f70), to(#ff3d54));
+  background: linear-gradient(to right, #ff8f70, #ff3d54);
 }
 /*# sourceMappingURL=style.css.map */
