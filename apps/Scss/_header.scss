@@ -1,7 +1,8 @@
 .header {
-    background : linear-gradient(to right, $gradientVeryLightRed, $gradientLightRed);
-
+    position: absolute;
+    z-index: 99;
     display: flex;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
 
@@ -18,11 +19,11 @@
         height: fit-content;
         justify-content: flex-start;
         font-weight: 500;
-        margin-left: 3.125rem;
+        margin-left: 3.675rem;
         
         .link {
             &:not(:last-child) {
-                margin-right: 1rem;
+                margin-right: 1.75rem;
             }
 
             span {
@@ -157,6 +158,7 @@
 
 .hamburger-menu{
     // position: absolute;
+    z-index: 99;
     font-family: 'Overpass', sans-serif;
     position: absolute;
     padding-top: 2.25rem;
@@ -175,6 +177,7 @@
     transition: 0.2s ease-in-out;
 
     &.open {
+        
         opacity: 1;
         visibility: visible;
         transition: 0.2s ease-in-out;

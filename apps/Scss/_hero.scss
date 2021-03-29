@@ -1,0 +1,96 @@
+.hero {
+    width: 100%;
+    height: 600px;
+    background : linear-gradient(to right, $gradientVeryLightRed, $gradientLightRed);
+    border-radius: 0px 0px 0px 110px;
+    overflow: hidden;
+
+    @include breakpoint-down(medium) {
+        background : linear-gradient(to bottom, $gradientVeryLightRed, $gradientLightRed);
+    }
+
+    &::before {
+        content: "";
+        background-image: url(../../images/bg-pattern-intro.svg);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: 230%;
+        background-repeat: no-repeat;
+        background-position: 26% 50%;
+
+        @include breakpoint-down(medium){
+            background-size: 305%;
+            background-position: 30% 34%;   
+            border-radius: 0px 0px 0px 110px;
+
+        }
+    }
+
+    &-content {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        z-index: 97;
+
+        h1 {
+            color: white;
+            font-weight: 500;
+            font-size: 36px;
+            margin-bottom: 20px;
+
+            @include breakpoint-up(large){
+            font-size: 48px;
+
+            }
+        }
+        
+        p{
+            font-family: 'Overpass', sans-serif;
+            margin: 0;
+            color: white;
+            font-weight: normal;
+            font-size: 20px;
+        }
+    }
+
+    &-button {
+        margin-top: 45px;
+
+        button {
+            cursor: pointer;
+            font-weight: 700;
+            padding: 15px 20px;
+            font-family: 'Ubuntu', sans-serif;
+
+            &.start {
+                background-color: white;
+                border: none;
+                color: $lightRed;
+                margin-right: 15px;
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: $veryLightRed;
+                    color: white;
+                }
+            }
+
+            &.learn {
+                border: 2px solid white;
+                background: none;
+                color: white;
+                transition: 0.2s ease-in-out;
+
+                &:hover {
+                    background-color: white;
+                    // border: none;
+                    color: $veryLightRed;
+                }
+            }
+        }
+    }
+}
