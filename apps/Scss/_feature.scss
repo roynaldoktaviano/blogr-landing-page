@@ -1,0 +1,31 @@
+.feature {
+    text-align: center;
+    font-family: 'Overpass', sans-serif;
+    overflow-x: hidden;
+
+    h2 {
+        width: fit-content;
+        font-size: 28px;
+        margin: 0 auto;
+    }
+
+    &-content {
+        img {
+            margin-top: 35px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
+        }
+
+        p{
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgb(121, 121, 121);
+        }
+    }
+
+    &-article {
+        margin-top: 35px;
+    }
+}

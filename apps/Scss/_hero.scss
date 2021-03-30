@@ -1,25 +1,27 @@
 .hero {
+    position: relative;
     width: 100%;
     height: 600px;
     background : linear-gradient(to right, $gradientVeryLightRed, $gradientLightRed);
     border-radius: 0px 0px 0px 110px;
-    overflow: hidden;
+    // overflow: hidden;
 
     @include breakpoint-down(medium) {
         background : linear-gradient(to bottom, $gradientVeryLightRed, $gradientLightRed);
     }
 
-    &::before {
+    &::after {
         content: "";
         background-image: url(../../images/bg-pattern-intro.svg);
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: inherit;
         background-size: 230%;
         background-repeat: no-repeat;
         background-position: 26% 50%;
 
         @include breakpoint-down(medium){
+            height: inherit;
             background-size: 305%;
             background-position: 30% 34%;   
             border-radius: 0px 0px 0px 110px;
