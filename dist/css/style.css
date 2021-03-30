@@ -580,6 +580,15 @@ button {
   color: #797979;
 }
 
+@media (min-width: 64em) {
+  .feature-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0%;
+  }
+}
+
 .feature-article {
   margin-top: 35px;
 }

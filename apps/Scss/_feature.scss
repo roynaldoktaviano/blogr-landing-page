@@ -23,6 +23,11 @@
             line-height: 1.7;
             color: rgb(121, 121, 121);
         }
+
+        @include breakpoint-up(large){
+            display: flex;
+            margin: 0%;
+        }
     }
 
     &-article {
